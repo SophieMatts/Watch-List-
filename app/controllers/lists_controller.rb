@@ -4,7 +4,8 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:list_id])
+    puts params[:id]
+    @list = List.find(params[:id])
   end
 
   def new
@@ -13,23 +14,36 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    @list.save
-    redirect_to list_path(@list)
+    if @list.save
+      redirect_to list_path(@list)
+    else
+      render 'new'
+    end
+  end
+
+  def save
+    redirect_to list_path(@index)
   end
 
   def edit
-    @list = List.find(params[:list_id])
+    @task = Task.find(params[:id])
   end
 
   def update
-    @list = List.find(params[:list_id])
-    @list.update(list_params)
-    redirect_to list_path(@list)
+    if @task.update(taks_params)
+      redirect_to task_path(@show)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    @list = List.find(params[:list_id])
-    @list.destroy
-    redirect_to list_path(@list)
+    @task.destroy
+    redirect_to task_path
+  end
+
+  private
+  def list_params
+    params.require(:list).permit(:name)
   end
 end
