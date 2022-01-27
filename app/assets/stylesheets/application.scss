@@ -5,10 +5,10 @@
 @import "config/shared";
 
 // External libraries
-// @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index"
+@import "pages/index";
