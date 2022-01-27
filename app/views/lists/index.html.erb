@@ -1,13 +1,20 @@
 <div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
     <h1>Save any kind of movies</h1>
-    <h3 class="typed-js"></h3>
-  </div>
 </div>
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-3">
     <h3 class="mb-0">My Lists</h3>
-    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-flat' %>
-  </div>
+    <% @lists.each do |list| %>
+       <p><%= link_to list.name, list_path(list), class: "nav-link" %></p>
+    <% end %>
 
+
+    <%= link_to 'Create a movie list', new_list_path, class: 'btn btn-flat' %>
+    <li class="nav-item active">
+        <%= link_to "My lists", lists_path, class: "nav-link" %>
+      </li>
+    <li class="nav-item active">
+      <%= link_to "New list", new_list_path, class: "nav-link" %>
+    </li>
+  </div>
 </div>
