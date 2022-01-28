@@ -187,6 +187,12 @@ GEM
     rspec-support (3.10.3)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -201,6 +207,7 @@ GEM
       railties (>= 6.0.0)
     strscan (3.0.1)
     thor (1.2.1)
+    tilt (2.0.10)
     timeout (0.2.0)
     turbo-rails (1.0.1)
       actionpack (>= 6.0.0)
@@ -233,6 +240,7 @@ DEPENDENCIES
   rails (~> 7.0.1)
   rails-controller-testing
   rspec-rails
+  sassc-rails
   simple_form
   sprockets-rails
   stimulus-rails
